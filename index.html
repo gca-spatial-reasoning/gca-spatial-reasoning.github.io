@@ -59,9 +59,6 @@
           <a class="navbar-item" href="https://ursulalujun.github.io/isbench.github.io/">
             IS-Bench
           </a>
-          <a class="navbar-item" href="https://ursulalujun.github.io/X-Boundary-page/">
-            X-Boundary
-          </a>
         </div>
       </div>
     </div>
@@ -78,7 +75,7 @@
           <h1 class="title is-1 publication-title">Geometrically-Constrained Agent for Spatial Reasoning</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">Zeren Chen</a><sup>1,2*</sup>,</span>
+              <a href="https://github.com/Zx55">Zeren Chen</a><sup>1,2*</sup>,</span>
             <span class="author-block">
               <a href="https://github.com/ursulalujun">Xiaoya Lu</a><sup>2,3*</sup>,</span>
             <span class="author-block">
@@ -145,60 +142,25 @@
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="2" data-slides-to-scroll="1">
-        
-        <div class="item">
-          <div class="card" style="margin: 10px; border-radius: 10px; overflow: hidden; box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);">
-            <div class="card-image">
-              <figure class="image">
-                <img src="./static/images/case_study_1.jpg" alt="Figure 8" style="width: 100%; height: auto; object-fit: cover;">
-              </figure>
-            </div>
-            <div class="card-content has-text-centered" style="padding: 1rem;">
-              <p class="is-size-6"><strong>Case Study #1:</strong> Unique object counting across multiple views.</p>
-            </div>
-          </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/case_1.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Case Study #1: Unique Object Counting across Multiple Views
+          </h2>
         </div>
-
-        <div class="item">
-          <div class="card" style="margin: 10px; border-radius: 10px; overflow: hidden; box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);">
-            <div class="card-image">
-              <figure class="image">
-                <img src="./static/images/case_study_2.jpg" alt="Figure 9" style="width: 100%; height: auto; object-fit: cover;">
-              </figure>
-            </div>
-            <div class="card-content has-text-centered" style="padding: 1rem;">
-              <p class="is-size-6"><strong>Case Study #2:</strong> Direction-based reference frame reasoning.</p>
-            </div>
-          </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/case_2.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Case Study #2: Spatial Relationship Reasoning under Direction-Based Reference Frame
+          </h2>
         </div>
-
-        <div class="item">
-          <div class="card" style="margin: 10px; border-radius: 10px; overflow: hidden; box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);">
-            <div class="card-image">
-              <figure class="image">
-                <img src="./static/images/figure10.png" alt="Figure 10" style="width: 100%; height: auto; object-fit: cover;">
-              </figure>
-            </div>
-            <div class="card-content has-text-centered" style="padding: 1rem;">
-               <p class="is-size-6"><strong>Case Study #3:</strong> Object-based reference frame reasoning.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="card" style="margin: 10px; border-radius: 10px; overflow: hidden; box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);">
-            <div class="card-image">
-              <figure class="image">
-                <img src="./static/images/figure11.png" alt="Figure 11" style="width: 100%; height: auto; object-fit: cover;">
-              </figure>
-            </div>
-            <div class="card-content has-text-centered" style="padding: 1rem;">
-              <p class="is-size-6"><strong>Case Study #4:</strong> Camera rotation analysis.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -216,16 +178,10 @@
             Current paradigms fail to bridge this gap. Training-based methods suffer from an "oracle paradox,"
             learning flawed spatial logic from imperfect oracles. Tool-integrated methods constrain the final computation but critically 
             leave the VLM's planning process unconstrained, resulting in geometrically flawed plans.
-          </p>
-          <p>
             In this work, we propose <strong>Geometrically-Constrained Agent (GCA)</strong>, a training-free agentic paradigm that resolves this gap by introducing
             a formal task constraint. Specifically, we strategically decouple the VLM's role into two stages:
-          </p>
-          <p>
-            1. Acting as a <strong>semantic analyst</strong>, the VLM translates the user's ambiguous query into a formal, verifiable task constraint, which defines the reference frame and objective.<br>
-            2. Acting as a <strong>task solver</strong>, the VLM generates and executes tool calls strictly within the deterministic bounds defined by the constraint.
-          </p>
-          <p>
+            1) Acting as a semantic analyst, the VLM translates the user's ambiguous query into a formal, verifiable task constraint, which defines the reference frame and objective.
+            2) Acting as a task solver, the VLM generates and executes tool calls strictly within the deterministic bounds defined by the constraint.
             This geometrically-constrained reasoning strategy successfully resolves the semantic-to-geometric gap, yielding a robust and verifiable reasoning pathway. 
             Comprehensive experiments demonstrate that GCA achieves SOTA performance on multiple spatial reasoning benchmarks, surpassing existing methods by <strong>~27%</strong>.
           </p>
@@ -239,27 +195,23 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Methodology</h2>
+        <h2 class="title is-3">Overview of GCA</h2>
         <div class="content has-text-justified">
+          <img src="./static/images/overall_paradigm_page.jpg" alt="Overall Paradigm of GCA" style="width:100%; height:auto;">
           <p>
-           To this end, we introduce Geometrically-Constrained Agent (GCA), a training-free agentic paradigm for geometrically-constrained spatial reasoning.
-           As shown in Figure 2, this strategy leverages a formal task constraint, C<sub>task</sub>, to decouple the reasoning process into two stages:
+           We introduce Geometrically-Constrained Agent (GCA), a training-free agentic paradigm for geometrically-constrained spatial reasoning.
+           This strategy leverages a formal task constraint, C<sub>task</sub>, to decouple the reasoning process into two stages:
           </p>
           <p>
             1. <strong>Task Formalization.</strong> The VLM, acting as a semantic analyst, translates the ambiguous query and visual data into the formal, verifiable task constraint C<sub>task</sub>. This stage defines what to solve, establishing immutable sub-constraints: a reference frame constraint and an objective constraint. <br>
-            2. <strong>Constrained Geometric Computation.</strong>strong> The VLM then, acting as a task solver, generates and executes tool calls to compute the final answer, operating strictly within the deterministic bounds defined by C<sub>task</sub>.
+            2. <strong>Constrained Geometric Computation.</strong> The VLM then, acting as a task solver, generates and executes tool calls to compute the final answer, operating strictly within the deterministic bounds defined by C<sub>task</sub>.
           </p>
+          <img src="./static/images/ref_frame_page.jpg" alt="Overall Paradigm of GCA" style="display: block; margin: 0 auto; width: 75%; height: auto;">
           <p>
-            This two-stage decoupling directly bridges the semantic-to-geometric gap.
-          </p>
-          <img src="./static/images/overall_paradigm_page.jpg" alt="Overall Paradigm of GCA" style="width:100%; height:auto;">
-          <p>
-            The core of GCA is the introduction of a Formal Task Constraint (C<sub>task</sub>) that serves as a deterministic bridge between semantics and geometry.
-            We define (C<sub>task</sub>) as a tuple containing two key sub-constraints: <br>
+            Formal Task Constraint C<sub>task</sub> bridges the semantic-to-geometric gap, which contains two key sub-constraints: <br>
             1. <strong>Reference Frame Constraint</strong> that defines the coordinate system for answering the query. <br>
             2. <strong>Objective Constraint</strong> that specifies the objective to be measured within that frame.
           </p>
-          <img src="./static/images/ref_frame_page.jpg" alt="Overall Paradigm of GCA" style="display: block; margin: 0 auto; width: 75%; height: auto;">
         </div>
       </div>
     </div>
@@ -270,7 +222,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Experiment</h2>
+        <h2 class="title is-3">Performance of GCA</h2>
         <div class="content has-text-justified">
           <p>
             <strong>Performance across VLMs</strong> GCA proves to be a robust architectural solution, achieving an average of <strong>37%</strong> relative improvement across all tested models. 
